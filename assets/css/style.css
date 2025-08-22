@@ -1,0 +1,275 @@
+/* reset cơ bản */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    font-family: 'Syne', sans-serif;
+    color:#07272E;
+    background:#0e2b2f;
+}
+a{
+    text-decoration:none;
+    color:inherit}
+
+/* header */
+.header{
+    background:#D7FF8A;   /* xanh nhạt */
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+.header__body{
+    max-width:1500px;
+    margin:auto;
+    padding:0 20px;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+/* logo */
+.logo img{
+    height:34px
+}
+
+/* nav */
+.nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+.nav a{
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.5px;
+}
+.nav a:hover{
+    border-bottom:2px solid #07272E}
+
+/* icons */
+.icons{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.icons img{height:18px}
+
+.hero {
+    font-family: 'Arial', sans-serif;  /* đổi font khác */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff; /* trắng */
+}
+
+.hero-rail {
+    width: 72px;
+    background:#07272E;
+    border-right: 1px solid rgba(255,255,255,.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;   /* giảm padding trên/dưới */
+    gap: 10px;         /* khoảng cách chung */
+}
+
+/* chữ dọc */
+.hero-rail .vtext {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 12px;
+    color: #C8FF80;
+    letter-spacing: .12em;
+    opacity: .9;
+    margin: 6px 0;     /* giảm margin */
+}
+
+/* nhóm icon ở cuối cột */
+.hero-rail .socials {
+    margin-top: auto;
+    margin-bottom: 10px;   /* gần đáy hơn */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;              /* icon sát nhau hơn */
+    align-items: center;
+}
+
+.hero-rail .socials {
+    margin-top: 350px;   /* ⬅️ cái này quyết định khoảng cách */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;           /* khoảng cách giữa các icon */
+    align-items: center;
+}
+.hero {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* thanh dọc trái */
+.hero-rail {
+    width: 72px;
+    background: #0E2B2F;
+    border-right: 1px solid rgba(255,255,255,.2);
+}
+
+/* cột trái nội dung nằm bên phải rail */
+.hero-left {
+    flex: 1;                  /* chiếm phần còn lại */
+    background: #0E2B2F;
+    padding: 80px 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* số nền */
+.bg-num {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    font-size: 300px;
+    font-weight: 800;
+    color: rgba(200, 255, 128, 0.2); /* mờ */
+    font-family: Syne;
+}
+
+/* dòng nhỏ */
+.kicker {
+    color: #CDFF9A;   /* xanh chanh */
+    font-family: Syne;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* tiêu đề */
+.title {
+    font-family: Syne;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+/* nút */
+.btn {
+    font-family: Syne;
+    width: fit-content;
+    display: inline-block;
+    padding: 8px 18px;
+    border: 2px solid #C8FF80;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: transparent;
+}
+.btn:hover {
+    background: #C8FF80;
+    color: #0F2F33;
+}
+.arrows {
+    position: absolute;   /* đặt trong hero-right */
+    right: 30px;          /* canh lề phải */
+    bottom: 20px;         /* canh lề dưới */
+    display: flex;
+    gap: 20px;            /* khoảng cách giữa 2 nút */
+}
+
+.arrows button {
+    background: none;     /* bỏ nền */
+    border: none;         /* bỏ viền */
+    color: #fff;          /* màu trắng */
+    font-size: 24px;      /* to cho dễ bấm */
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.arrows button:hover {
+    opacity: 1;           /* hover sáng rõ hơn */
+}
+
+.nav .mega__menu{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;            /* hoặc display:block */
+  flex-direction:column;   /* xếp dọc */
+  height: fit-content;
+  
+}
+.mega{
+  position:absolute; left:0; right:0; top:100%;
+  display:none;
+  background:#fff; color:#07272E;
+  border-top:1px solid #eee;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  z-index:1001;
+}
+.has-mega.open .mega{ 
+  display:block; 
+}
+
+/* underline CATALOGS khi mở */
+.has-mega.open > #catalogs-trigger{
+  position:relative;
+}
+
+/* khung trong mega */
+.mega__inner{
+    max-width:1500px;
+    margin:0 auto; 
+    padding:24px 14px;
+    display:grid; grid-template-columns:240px 1fr; gap:32px;
+    font-family:'Syne',sans-serif;
+}
+
+/* ===== menu trái ===== */
+.mega__menu{ list-style:none;
+    margin:0; padding:0; 
+    border-right:1px solid #eee;
+    gap: 0 !important;
+  
+}
+.mega__menu li+li{
+    border-top:1px solid #eee;
+}
+.mega__menu a{
+    display:flex;
+    justify-content:space-between; 
+    align-items:center;
+    padding:14px 16px; 
+    color:#07272E;
+    text-decoration:none;
+    
+}
+.mega__menu a::after{ content:"›";
+   opacity:.7; 
+}
+
+/* ===== lưới phải ===== */
+.mega__grid{
+    display:grid;
+    grid-template-columns:repeat(5, minmax(200px,1fr));
+    gap:24px;
+}
+.mega__item{ text-decoration:none; 
+    color:#07272E; font-size:13px; 
+    text-align:center; }
+.mega__item img{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.mega__item span{ 
+    display:block; 
+    margin-top:8px; }
+
+
+
+
+
+
+

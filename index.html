@@ -3,9 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <h1>HomePage</h1>
+  <!-- header -->
+  <header class="header fixed">
+    <div class="main-content">
+      <div class="header__body">
+        
+        <!-- logo -->
+        <a href="/" class="logo">
+          <img src="./img/vector/logo.svg" alt="Hasport.">
+        </a>
+        
+        <!-- nav -->
+        <nav class="nav">
+          <ul>
+            <li><a href="#!">HOME</a></li>
+             <li class="has-mega">
+      <a href="#!" id="catalogs-trigger" class="nav-link">CATALOGS</a>
+
+      <!-- panel mega -->
+      <div class="mega" role="region" aria-label="Catalogs">
+        <div class="mega__inner">
+          <!-- menu trái -->
+          <ul class="mega__menu">
+            <li class="is-active"><a href="#!">Activity</a></li>
+            <li><a href="#!">Equipment</a></li>
+            <li><a href="#!">Women's</a></li>
+            <li><a href="#!">Men's</a></li>
+          </ul>
+          <!-- lưới phải -->
+          <div class="mega__grid">
+            <a class="mega__item" href="#!"><img src="./img/megamenu/image.svg" alt=""><span>Boots</span></a>
+            <a class="mega__item" href="#!"><img src="./img/megamenu/image (1).svg" alt=""><span>Helmets</span></a>
+            <a class="mega__item" href="#!"><img src="./img/megamenu/Group 163.svg" alt=""><span>Goggles</span></a>
+            <a class="mega__item" href="#!"><img src="./img/megamenu/Group 164.svg" alt=""><span>Binding</span></a>
+            <a class="mega__item" href="#!"><img src="./img/megamenu/Group 166.svg" alt=""><span></span></a>
+          </div>
+        </div>
+      </div>
+    </li>
+            <li><a href="#!">BLOG</a></li>
+            <li><a href="#!">SHOP</a></li>
+            <li><a href="#!">CONTACT US</a></li>
+          </ul>
+        </nav>
+        
+        <!-- icons -->
+        <div class="icons">
+          <a href="#"><img src="./img/vector/Search.svg" alt="Search"></a>
+          <a href="#"><img src="./img/vector/Vector (1).svg" alt="Wishlist"></a>
+          <a href="#"><img src="./img/vector/Vector (2).svg" alt="Account"></a>
+          <a href="#"><img src="./img/vector/🦆 icon _cart_.svg" alt="Cart"></a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <section class="hero">
+  <!-- thanh dọc trái -->
+  <aside class="hero-rail">
+    <span class="vtext">©2023  Docreativemarket</span>
+    <span class="vtext">FOLLOW US</span>
+    <div class="socials">
+      <a href="#"><img src="./img/icon.svg" alt="Linkedin"></a>
+      <a href="#"><img src="./img/vector/Vector (3).svg" alt="Facebook"></a>
+      <a href="#"><img src="./img/vector/Vector (4).svg" alt="X"></a>
+      <a href="#"><img src="./img/vector/Vector (5).svg" alt="Instagram"></a>
+    </div>
+  </aside>
+
+  <!-- cột trái -->
+  <div class="hero-left">
+    <div class="bg-num">01</div>
+    <p class="kicker">BEGIN BREAKING YOUR LIMIT</p>
+    <h1 class="title">KNOW YOUR<br>LIMITS. SKI<br>BEYOND THEM.</h1>
+    <a class="btn" href="#!">VIEW MORE</a>
+  </div>
+
+  <!-- cột phải -->
+  <div class="hero-right">
+    <div class="frame">
+      <img src="./img/ski.svg" alt="Ski image">
+    </div>
+    <div class="arrows">
+      <button>←</button>
+      <button>→</button>
+    </div>
+  </div>
+</section>
+
+
 </body>
+<script>
+  const megaLi = document.querySelector('.has-mega');
+  const trigger = document.getElementById('catalogs-trigger');
+
+  trigger.addEventListener('click', e => {
+    e.preventDefault();
+    megaLi.classList.toggle('open');
+  });
+
+  // click ra ngoài để đóng
+  document.addEventListener('click', e => {
+    if (!megaLi.contains(e.target)) megaLi.classList.remove('open');
+  });
+</script>
 </html>
