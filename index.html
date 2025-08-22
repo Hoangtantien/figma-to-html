@@ -64,6 +64,7 @@
           <div class="backdrop"></div>
       </div>
     </div>
+    
   </header>
   <section class="hero">
   <!-- thanh dọc trái -->
@@ -115,7 +116,7 @@
   document.addEventListener('click', e => {
     if (!megaLi.contains(e.target)) megaLi.classList.remove('open');
   });
-    const burger=document.querySelector('.hamburger');
+  const burger=document.querySelector('.hamburger');
   const nav=document.querySelector('.nav');
   const backdrop=document.querySelector('.backdrop');
   burger?.addEventListener('click', ()=>{

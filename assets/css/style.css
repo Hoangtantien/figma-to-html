@@ -17,13 +17,14 @@ a{
     z-index:1000;
 }
 .header__body{
-    max-width:1500px;
+    max-width:1900px;
     margin:auto;
     padding:0 20px;
     height:70px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+     display:flex;  
 }
 
 /* logo */
@@ -32,10 +33,16 @@ a{
 }
 
 /* nav */
+.nav{
+  margin-left:auto;          
+  display:flex;
+  align-items:center;
+  
+}
 .nav ul{
     list-style:none;
     display:flex;
-    gap:25px;
+    gap:40px;
 }
 .nav a{
     font-weight:600;
@@ -47,11 +54,12 @@ a{
 
 /* icons */
 .icons{
-    display:flex;
-    align-items:center;
-    gap:15px;
+   margin-left:auto;           /* đẩy cả cụm sang phải */
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
-.icons img{height:18px}
+.icons img{height:28px}
 
 .hero {
     font-family: 'Arial', sans-serif;  /* đổi font khác */
@@ -169,7 +177,7 @@ a{
 .frame{ position: relative; } 
 .arrows {
     position: absolute;
-    right: 0px;                  /* sát bên phải */              /* sát đáy */
+    right: 0px;                            
     display: flex;
     gap: 20px;          /* khoảng cách giữa 2 nút */
 }
@@ -266,7 +274,6 @@ a{
     margin-top:8px; 
 }
 
-
 :root{ --header-h:70px; }
 
 :root{ --header-h:60px; --gap:16px; }
@@ -304,8 +311,9 @@ img{ max-width:100%; height:auto }
 
 :root{ --header-h:60px; --accent:#C8FF80; --bg:#0E2B2F; }
 
-@media (max-width:768px){
+@media  (max-width:800px){
   /* Header */
+ 
   .header__body{ height:var(--header-h); }
   .icons{ display:none; }
   .hamburger{ display:inline-flex; flex-direction:column; gap:5px; width:40px; height:40px; border:0; background:transparent; cursor:pointer; }
