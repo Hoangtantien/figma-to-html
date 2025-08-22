@@ -61,18 +61,16 @@ a{
 }
 
 .hero-rail {
-    width: 72px;
-    background:#07272E;
-    border-right: 1px solid rgba(255,255,255,.25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;   /* giảm padding trên/dưới */
-    gap: 10px;         /* khoảng cách chung */
+    width: 132px !important;
+    display:flex; 
+    flex-direction:column; 
+    align-items:center;     /* khoảng cách chung */
+   
 }
 
 /* chữ dọc */
 .hero-rail .vtext {
+    padding-bottom: 30px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     font-size: 12px;
@@ -80,36 +78,33 @@ a{
     letter-spacing: .12em;
     opacity: .9;
     margin: 6px 0;     /* giảm margin */
+    margin-left: 60px;
 }
-
+.hero-rail .vtext:nth-of-type(2){ margin-top:auto; }
 /* nhóm icon ở cuối cột */
 .hero-rail .socials {
-    margin-top: auto;
-    margin-bottom: 10px;   /* gần đáy hơn */
+    
+    margin-bottom: auto;   /* gần đáy hơn */
     display: flex;
     flex-direction: column;
-    gap: 8px;              /* icon sát nhau hơn */
+                /* icon sát nhau hơn */
     align-items: center;
+    margin-left: 60px;
 }
 
 .hero-rail .socials {
-    margin-top: 350px;   /* ⬅️ cái này quyết định khoảng cách */
-    display: flex;
-    flex-direction: column;
-    gap: 8px;           /* khoảng cách giữa các icon */
-    align-items: center;
+   margin-top:10px;     /* ⬅️ chỉnh số này để gần/xa hơn */
+  gap:8px;
+}
+.socials img[alt="Instagram"]{
+  height: 21px;            /* ví dụ đổi size */
 }
 .hero {
     display: flex;
     min-height: 100vh;
 }
 
-/* thanh dọc trái */
-.hero-rail {
-    width: 72px;
-    background: #0E2B2F;
-    border-right: 1px solid rgba(255,255,255,.2);
-}
+
 
 /* cột trái nội dung nằm bên phải rail */
 .hero-left {
@@ -127,7 +122,7 @@ a{
     position: absolute;
     top: 50px;
     left: 60px;
-    font-size: 300px;
+    font-size: 350px;
     font-weight: 800;
     color: rgba(200, 255, 128, 0.2); /* mờ */
     font-family: Syne;
@@ -137,7 +132,7 @@ a{
 .kicker {
     color: #CDFF9A;   /* xanh chanh */
     font-family: Syne;
-    font-size: 12px;
+    font-size: 14.5px;
     font-weight: 600;
     margin-bottom: 16px;
 }
@@ -145,8 +140,7 @@ a{
 /* tiêu đề */
 .title {
     font-family: Syne;
-    font-size: 42px;
-    font-weight: 700;
+    font-size: 70px;
     line-height: 1.2;
     text-transform: uppercase;
     margin-bottom: 30px;
@@ -159,7 +153,7 @@ a{
     padding: 8px 18px;
     border: 2px solid #C8FF80;
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     background: transparent;
@@ -168,12 +162,16 @@ a{
     background: #C8FF80;
     color: #0F2F33;
 }
+.space{
+    padding-right: 100px;
+    display: block;
+}
+.frame{ position: relative; } 
 .arrows {
-    position: absolute;   /* đặt trong hero-right */
-    right: 30px;          /* canh lề phải */
-    bottom: 20px;         /* canh lề dưới */
+    position: absolute;
+    right: 0px;                  /* sát bên phải */              /* sát đáy */
     display: flex;
-    gap: 20px;            /* khoảng cách giữa 2 nút */
+    gap: 20px;          /* khoảng cách giữa 2 nút */
 }
 
 .arrows button {
@@ -265,11 +263,80 @@ a{
 
 .mega__item span{ 
     display:block; 
-    margin-top:8px; }
+    margin-top:8px; 
+}
 
 
+:root{ --header-h:70px; }
 
+:root{ --header-h:60px; --gap:16px; }
+*{ box-sizing:border-box }
+img{ max-width:100%; height:auto }
 
+/* @media (max-width:768px){
+ .space {
+    display: none !important;
+  }
+.header__body{ height:var(--header-h) }
+.icons{ display:none }
+.hero{ flex-direction:column; min-height:auto }
+.hero-rail{ display:none }
+.hero-left{        
+     padding: 56px 16px;
+    }
+.bg-num{ 
+        font-size: 243px;
+        top: -117px;
+        left: 16px;
+        color: rgba(200, 255, 128, .2); }
+.title{ font-size: 42px;
+        line-height: 1.4;
+        margin-bottom: -13px;
+        padding-bottom: 36px; }
+.kicker{
+        color: #CDFF9A;
+        font-family: Syne;
+        font-size: 14.5px;
+        font-weight: 600;
+        margin-top: 30px;
+    }
+  NAV thành drawer trượt từ phải (hoặc trái tuỳ thích) */
 
+:root{ --header-h:60px; --accent:#C8FF80; --bg:#0E2B2F; }
 
+@media (max-width:768px){
+  /* Header */
+  .header__body{ height:var(--header-h); }
+  .icons{ display:none; }
+  .hamburger{ display:inline-flex; flex-direction:column; gap:5px; width:40px; height:40px; border:0; background:transparent; cursor:pointer; }
+  .hamburger span{ width:22px; height:2px; background:#07272E; display:block; }
 
+  /* Drawer nav (bấm hamburger để mở) */
+  .nav{ position:fixed; top:var(--header-h); right:0; bottom:0; width:80vw;
+        background:#fff; color:#07272E; transform:translateX(100%); transition:.25s; z-index:1100; padding:18px 20px; }
+  .nav.open{ transform:translateX(0); }
+  .nav ul{ flex-direction:column; gap:0; }
+  .nav a{ display:block; padding:12px 0; border-bottom:1px solid #eee; font-size:16px; }
+
+  .backdrop{ position:fixed; inset:0; background:rgba(0,0,0,.35); opacity:0; pointer-events:none; transition:.2s; z-index:1090; }
+  .backdrop.show{ opacity:1; pointer-events:auto; }
+
+  /* Hero 1 cột */
+  .hero{ display:block; background:var(--bg); }
+  .hero-rail{ display:none; }                  /* ẩn cột dọc trái */
+
+  .hero-left{ padding:24px 16px 12px; position:relative; }
+  .bg-num{ position:absolute; left:16px; top:6px; font:800 140px/1 'Syne',sans-serif; color:rgba(200,255,128,.18); pointer-events:none; }
+  .kicker{ color:var(--accent); font:600 12px/1 'Syne',sans-serif; letter-spacing:.16em; margin:8px 0 10px; }
+  .title{ color:#fff; text-transform:uppercase; font:700 28px/1.15 'Syne',sans-serif; margin:0 0 14px; }
+
+  /* CTA có mảng xanh bên trái */
+  .btn{ position:relative; display:inline-block; padding:10px 16px; border:2px solid var(--accent); color:#fff; font:600 12px/1 'Syne',sans-serif; text-transform:uppercase; background:transparent; }
+  
+
+  /* Ảnh dưới + mũi tên */
+  .hero-right{ padding:12px 16px 22px; }
+  .frame img{ width:100%; height:auto; display:block; }
+  .arrows{ display:flex; justify-content:flex-end; gap: 21px; padding:10px 4px 0; }
+  .arrows button{ background:none; border:0; color:#fff; font:700 20px 'Syne',sans-serif; }
+}

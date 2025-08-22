@@ -60,7 +60,8 @@
           <a href="#"><img src="./img/vector/Vector (2).svg" alt="Account"></a>
           <a href="#"><img src="./img/vector/🦆 icon _cart_.svg" alt="Cart"></a>
         </div>
-
+        <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+          <div class="backdrop"></div>
       </div>
     </div>
   </header>
@@ -73,7 +74,7 @@
       <a href="#"><img src="./img/icon.svg" alt="Linkedin"></a>
       <a href="#"><img src="./img/vector/Vector (3).svg" alt="Facebook"></a>
       <a href="#"><img src="./img/vector/Vector (4).svg" alt="X"></a>
-      <a href="#"><img src="./img/vector/Vector (5).svg" alt="Instagram"></a>
+      <a href="#"><img src="./img/vector/logoins.svg" alt="Instagram"></a>
     </div>
   </aside>
 
@@ -88,13 +89,15 @@
   <!-- cột phải -->
   <div class="hero-right">
     <div class="frame">
-      <img src="./img/ski.svg" alt="Ski image">
+      <img src="./img/ski.svg" alt="">
+        <div class="arrows">
+        <button>←</button>
+        <button>→</button>
+        </div>
     </div>
-    <div class="arrows">
-      <button>←</button>
-      <button>→</button>
-    </div>
-  </div>
+  
+</div>
+<div class ="space"></div>
 </section>
 
 
@@ -112,5 +115,18 @@
   document.addEventListener('click', e => {
     if (!megaLi.contains(e.target)) megaLi.classList.remove('open');
   });
+    const burger=document.querySelector('.hamburger');
+  const nav=document.querySelector('.nav');
+  const backdrop=document.querySelector('.backdrop');
+  burger?.addEventListener('click', ()=>{
+    const open=!nav.classList.contains('open');
+    nav.classList.toggle('open',open);
+    backdrop.classList.toggle('show',open);
+    document.body.style.overflow=open?'hidden':'';
+  });
+  backdrop?.addEventListener('click', ()=>{
+    nav.classList.remove('open'); backdrop.classList.remove('show'); document.body.style.overflow='';
+  });
+  
 </script>
 </html>
